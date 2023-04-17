@@ -10,28 +10,28 @@
     <form action="POST">
       <div>
         <label for="fulName">Full name: </label>
-        <input type="text" id="fullName" required />
+        <input type="text" id="fullName" name="social" required />
       </div>
       <div>
         <p>
           <label for="email">Email address: </label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" name="social" required />
         </p>
       </div>
       <div>
         <p>
           <label for="about">About you: </label>
-          <textarea id="about" cols="50" rows="3"></textarea>
+          <textarea id="about" cols="50" rows="3" name="social"></textarea>
         </p>
       </div>
       <div>
         <p>
           <label for="picture">Photo: </label>
-          <input type="file" id="picture" />
+          <input type="file" id="picture" name="social" />
         </p>
       </div>
       <div>
-        <input type="submit" />
+        <input type="submit" name="social" />
       </div>
     </form>
   </body>

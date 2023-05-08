@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Array Lab</title>
+    <script>
+      let nums = [21, 61, 81, 1];
+      function divideArray(nums) {
+        let evenArr = [];
+        let oddArr = [];
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] % 2 == 0) {
+            evenArr.push(nums[i]);
+            evenArr.sort(function (a, b) {
+              return a - b;
+            });
+          } else if (nums[i] % 2 != 0) {
+            oddArr.push(nums[i]);
+            oddArr.sort(function (a, b) {
+              return a - b;
+            });
+          }
+        }
+        if (evenArr.length === 0) {
+          console.log("EvenNums: None");
+        } else {
+          console.log("EvenNums: " + evenArr);
+        }
+
+        if (oddArr.length === 0) {
+          console.log("OddNums: None");
+        } else {
+          console.log("OddNums: " + oddArr);
+        }
+      }
+
+      divideArray(nums);
+    </script>
+  </head>
+  <body>
+    <p>
+      To test your function, call divideArray() from the JavaScript console in
+      the browser.
+    </p>
+  </body>
+</html>

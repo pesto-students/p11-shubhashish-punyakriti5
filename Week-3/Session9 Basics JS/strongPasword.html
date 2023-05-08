@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+    <script>function isStrongPassword(password) {
+        console.log("function is working");
+      let str = Array.from(password);
+      console.log(str);
+      let uppercase;
+      let check;
+      for (let i = 0; i < str.length; i++) {
+        if (str[i].valueOf().toUpperCase() === str[i].valueOf()) {
+         uppercase = true;
+          break;
+        } else {
+          uppercase = false;
+        }
+      }
+      console.log(uppercase);
+      if (str.length >= 8 && uppercase == true && password != "password") {
+        console.log(uppercase,str.length,password);
+        check=true;
+      } else {
+        check=false;
+      }
+      console.log(check);
+    }
+    isStrongPassword("password");
+    </script>
+</head>
+<body>
+    <h1>Check Password</h1>
+    
+</body>
+</html>

@@ -3,34 +3,26 @@
   <head>
     <title>JavaScript Array Lab</title>
     <script>
-      let nums = [21, 61, 81, 1];
+      let nums = [21, 61, 81, 1, 42, 22, 31];
       function divideArray(nums) {
         let evenArr = [];
         let oddArr = [];
-        for (let i = 0; i < nums.length; i++) {
-          if (nums[i] % 2 == 0) {
-            evenArr.push(nums[i]);
-            evenArr.sort(function (a, b) {
-              return a - b;
-            });
-          } else if (nums[i] % 2 != 0) {
-            oddArr.push(nums[i]);
-            oddArr.sort(function (a, b) {
-              return a - b;
-            });
+        for (let item of nums) {
+          if (item % 2 == 0) {
+            evenArr.push(item);
+            evenArr.sort();
+          } else if (item % 2 != 0) {
+            oddArr.push(item);
+            oddArr.sort();
           }
         }
-        if (evenArr.length === 0) {
-          console.log("EvenNums: None");
-        } else {
-          console.log("EvenNums: " + evenArr);
-        }
+        !evenArr.length
+          ? console.log("EvenNums: None")
+          : console.log("EvenNums: " + evenArr);
 
-        if (oddArr.length === 0) {
-          console.log("OddNums: None");
-        } else {
-          console.log("OddNums: " + oddArr);
-        }
+        !oddArr.length
+          ? console.log("OddNums: None")
+          : console.log("OddNums: " + oddArr);
       }
 
       divideArray(nums);

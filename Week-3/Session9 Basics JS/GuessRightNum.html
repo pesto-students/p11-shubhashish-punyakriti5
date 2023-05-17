@@ -5,48 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PlayGuessingNumber</title>
-    <script >
-      let totalGuesses;
+    <script>
       function playGuessingGame(numToGuess, totalGuesses = 10) {
-        let a = prompt("Enter a number between 1 and 100");
-        let userNum = Number.parseInt(a);
-        if (userNum === null) {
-          totalGuesses = 0;
-          return 0;
-        }
         for (let i = 1; i <= totalGuesses; i++) {
-          console.log(userNum);
-          if (isNaN(userNum)) {
+          let userNum = parseInt(prompt("Enter a number between 1 and 100"));
+
+          console.log(userNum, typeof userNum);
+
+          // working only in 1st attempt
+          if (userNum === numToGuess) {
+            console.log(userNum, totalGuesses, i);
+            alert(
+              `You guessed the right number: ${numToGuess} in ${i} attempts`
+            );
+            break;
+          } else if (userNum < numToGuess) {
+            alert(`${userNum} is too small. Guess a larger number`);
+          } else if (userNum > numToGuess) {
+            alert(`${userNum} is too large. Guess a smaller number`);
+          } else if (isNaN(userNum)) {
             --i;
-            userNum = prompt("Please enter a number");
-      
-          } else {
-            if (userNum === numToGuess) {
-              
-              console.log("hello",numToGuess,totalGuesses);
-              console.log(
-                "You guessed the right number:" +
-                  numToGuess +
-                  " in " +
-                  [i] +
-                  " attempts"
-              );
-              break;
-            } else if (userNum < numToGuess) {
-              userNum = prompt(
-                userNum + " is too small. Guess a larger number"
-              );
-            } else if (userNum > numToGuess) {
-              userNum = prompt(
-                userNum + " is too large. Guess a smaller number"
-              );
-            }
-            totalGuesses--;
+            alert("Please enter a number");
+          } else if (userNum === null) {
+            return 0;
           }
         }
       }
-      console.log(totalGuesses);
-      playGuessingGame(86, 3);
+
+      playGuessingGame(86, 2);
     </script>
   </head>
   <body>

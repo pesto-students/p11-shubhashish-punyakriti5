@@ -29,13 +29,19 @@
       </p>
 
       <!-- TODO: Add srcset and sizes attributes -->
-      <!-- responsive images is not working  -->
+      <!-- responsive images is not working for default 200px -->
       <img
         src="luxor_600.jpg"
-        alt="Luxor Temple"
-        srcset="luxor_600.jpg 300w, luxor_800.jpg 600w, luxor_1200.jpg 900w"
+       
+        srcset="luxor_600.jpg 600w,
+                 luxor_800.jpg 800w,
+                 luxor_1200.jpg 1200w" 
+         sizes="(min-width: 700px) 600px,
+                (max-width: 500px) 400px,
+                200px" 
+         alt="Luxor Temple">
         
-      />
+      
 
       <p>Packages include airfare, lodging, and several guided tours!</p>
       <ul>

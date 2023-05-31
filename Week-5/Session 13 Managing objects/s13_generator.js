@@ -2,7 +2,6 @@ function* myGenerator(array){
     for (const name of array){
         yield Symbol(name);
     }
-
 }
 
 const array= ["punya","pallavi","pratistha"];

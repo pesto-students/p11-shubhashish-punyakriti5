@@ -1,3 +1,6 @@
+// Time: O(log n), n is arr.length
+// Space: O(1)
+
 function findMinCyclic(arr){
     let l=0;
     let r=arr.length-1;

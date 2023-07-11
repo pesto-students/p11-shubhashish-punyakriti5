@@ -1,3 +1,6 @@
+// Time: O(log n)
+// Space: O(1)
+
 function findLastOccurence(arr,target){
     let n=arr.length;
     let l=0;
@@ -8,10 +11,10 @@ function findLastOccurence(arr,target){
         return mid;
     }
     if(arr[mid]<=target){
-        l=mid+1
+        l=mid+1;
     }
     if(arr[mid]>target){
-        r=mid-1
+        r=mid-1;
     }
     }
     return -1;

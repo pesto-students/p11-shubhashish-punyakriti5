@@ -1,3 +1,6 @@
+// Time: O(log min(m,n))
+// Space: O(1)
+
 function findMedian(arr1,arr2,m,n){
     if(m>n){
         return findMedian(arr2,arr1,n,m)

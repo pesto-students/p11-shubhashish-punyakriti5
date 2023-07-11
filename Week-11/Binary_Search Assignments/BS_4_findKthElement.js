@@ -1,3 +1,8 @@
+// Time: O(log(min(m,n)))
+// Space: O(1)
+
+// find kth smallest element from 2 sorted arrays
+
 function findKthElement(arr1,arr2,m,n,k){
     if(m>n){
         return findKthElement(arr2,arr1,n,m,k);

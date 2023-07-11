@@ -1,3 +1,6 @@
+// Time: O(log n)
+// Space: O(1)
+
 function findTarget(arr,target){
     let l=0;
     let r= arr.length-1;

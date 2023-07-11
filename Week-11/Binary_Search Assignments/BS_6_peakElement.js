@@ -1,4 +1,4 @@
-// Time = O(log n) - binary search
+// Time = O(log n) 
 //  Space = O(1)
 
 function findPeakElement(nums){

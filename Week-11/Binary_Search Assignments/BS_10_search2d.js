@@ -1,3 +1,6 @@
+// Time: O(log(n*m)) n=rows, m=columns
+// Space: O(1)
+
 function findInMatrix( arr,target){
     let n= arr.length;
     let m= arr[0].length;

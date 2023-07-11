@@ -1,3 +1,5 @@
+// Time: O(n log(n)), n is no.of horses
+// Space: O(log(n)), recursive calls of helper function
 
 function findMaxStrengthHelper(horses,n,k,start,end){
     if(start===end){
@@ -26,10 +28,8 @@ function findMaxStrengthHelper(horses,n,k,start,end){
 function findMaxStrength(horses, n,k){
     return findMaxStrengthHelper(horses,n,k,0,n-1);
 }
-const horses = [52, 8, 2, 10, 31]; // List of horse strengths
-const n = horses.length; // Number of horses
-const k = 3; // Maximum number of races
+const horses = [52, 8, 2, 10, 31];
+const n = horses.length;
+const k = 3;
 
 console.log(findMaxStrength(horses, n, k))
-// const maxStrengthHorse = horses[maxStrengthHorseIndex];
-// console.log("Maximum strength horse:", maxStrengthHorse);

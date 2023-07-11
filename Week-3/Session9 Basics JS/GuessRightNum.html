@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayGuessingNumber</title>
+    <script>
+      function playGuessingGame(numToGuess, totalGuesses = 10) {
+        for (let i = 1; i <= totalGuesses; i++) {
+          let userNum = parseInt(prompt("Enter a number between 1 and 100"));
+
+          console.log(userNum, typeof userNum);
+
+          // working only in 1st attempt
+          if (userNum === numToGuess) {
+            console.log(userNum, totalGuesses, i);
+            alert(
+              `You guessed the right number: ${numToGuess} in ${i} attempts`
+            );
+            break;
+          } else if (userNum < numToGuess) {
+            alert(`${userNum} is too small. Guess a larger number`);
+          } else if (userNum > numToGuess) {
+            alert(`${userNum} is too large. Guess a smaller number`);
+          } else if (isNaN(userNum)) {
+            --i;
+            alert("Please enter a number");
+          } else if (userNum === null) {
+            return 0;
+          }
+        }
+      }
+
+      playGuessingGame(86, 2);
+    </script>
+  </head>
+  <body>
+    <h1>Lets Play</h1>
+  </body>
+</html>

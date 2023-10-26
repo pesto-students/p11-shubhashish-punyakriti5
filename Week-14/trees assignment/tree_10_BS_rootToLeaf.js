@@ -1,5 +1,5 @@
 // Time : O(n), traversing each node once
-// Space : O(h) ranges to O(log n) to )(n), recursive call stack height
+// Space : O(h) ranges to O(log n) to O(n), recursive call stack height
 
 class TreeNode {
     constructor(value) {

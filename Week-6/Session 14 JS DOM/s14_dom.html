@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom manipulation</title>
+  </head>
+  <body>
+    <script>
+      function displayWindowProperties() {
+        console.log(navigator.userAgent);
+        console.log(screen.width, screen.height);
+        console.log(location.href, location.pathname);
+        localStorage.setItem("name", "Punya");
+        let localData = localStorage.getItem("name");
+        console.log(localData);
+        sessionStorage.setItem("age", "24");
+        let sessionData = sessionStorage.getItem("age");
+        console.log(sessionData);
+      }
+      displayWindowProperties();
+    </script>
+  </body>
+</html>

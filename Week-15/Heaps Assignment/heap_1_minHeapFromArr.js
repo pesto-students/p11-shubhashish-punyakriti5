@@ -1,3 +1,5 @@
+// Problem statement : Given an array of integers, write a function to determine whether the array represents a min heap or not.
+
 // Time : O(n), n is array length as it iterates through it
 // Space : O(1)
 
@@ -16,5 +18,5 @@ function isMinHeap(arr) {
   return true;
 }
 
-const arr = [0, 5, 17, 8, 9, 10];
+const arr = [0, 5, 7, 8, 9, 1];
 console.log(isMinHeap(arr));

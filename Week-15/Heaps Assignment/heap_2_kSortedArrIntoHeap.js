@@ -1,3 +1,5 @@
+// Problem statement: You are given k sorted arrays of integers. Write a function to merge these k sorted arrays into a single sorted array using a heap.
+
 // Time: O(k + resultSize *log k), O(k) to build heap, and insertion takes O(log k), extraction takes O(log k), both happened for resultSize times
 // Space : O(k + resultSize), O(k) for heap and O(resultSize) for mergers sorted array
 
@@ -25,7 +27,7 @@ class MinHeap {
 
   insert(node) {
     this.heap.push(node);
-    this.perlocateUp();
+    this.lookUp();
   }
 
   extractMin() {
@@ -38,12 +40,12 @@ class MinHeap {
     } else {
       let min = this.heap[0];
       this.heap[0] = this.heap.pop();
-      this.perlocateDown();
+      this.lookDown();
       return min;
     }
   }
 
-  perlocateUp() {
+  lookUp() {
     let idx = this.heap.length - 1;
     while (idx > 0) {
       const parentIdx = Math.floor((idx - 1) / 2);
@@ -59,7 +61,7 @@ class MinHeap {
     }
   }
 
-  perlocateDown() {
+  lookDown() {
     let idx = 0;
     let parent = this.heap[0];
 
@@ -110,12 +112,13 @@ function mergeKSortedArrays(arrays) {
   }
 
   const result = [];
-  //const resultSize = arrays.reduce((total, arr) => total + arr.length, 0);
-
-  for (let i = 0; i < resultSize; i++) {
+  
+  for (let ele = 0; ele < resultSize; ele++) {
     const root = mh.extractMin();
+    
     result.push(root.element);
 
+    //root.j++;
     if (root.j < arrays[root.i].length) {
       const nextValue = arrays[root.i][root.j];
       const nextNode = new MinHeapNode(nextValue, root.i, root.j + 1);
